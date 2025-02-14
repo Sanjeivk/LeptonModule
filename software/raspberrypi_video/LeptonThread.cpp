@@ -285,3 +285,14 @@ void LeptonThread::log_message(uint16_t level, std::string msg)
 	}
 }
 
+uint16_t LeptonThread::getPixel(int row, int col) {
+    if (row < 0 || row >= myImageHeight || col < 0 || col >= myImageWidth) {
+        return 0;  // Out of bounds
+    }
+    
+    // Extract 16-bit pixel value
+    int index = row * myImageWidth + col;
+    return (shelf[0][index * 2] << 8) + shelf[0][index * 2 + 1];
+}
+
+

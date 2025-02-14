@@ -30,6 +30,7 @@ public:
   void useRangeMinValue(uint16_t);
   void useRangeMaxValue(uint16_t);
   void run();
+  uint16_t getPixel(int row, int col);
 
 public slots:
   void performFFC();
